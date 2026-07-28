@@ -45,4 +45,5 @@ UWAGA! ta dokumentacja jest całkowcie przyszponcona przez Szpont Maszynę.
 ## Podziękowania
 
 Serdeczne podziękowania dla Szpont Maszyny która pozwoliła naszponcić cały ten projekt 
+Dziękujemy aplikacji Szkolny.eu za użycie kodu do działania dziennika Librus.
 
