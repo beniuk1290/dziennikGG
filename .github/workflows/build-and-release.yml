@@ -1,4 +1,4 @@
-name: Build and Release APK
+name: Build Android APK
 
 on:
   push:
@@ -27,20 +27,9 @@ jobs:
       - name: Build Android Debug APK
         run: ./gradlew :composeApp:assembleDebug
 
-      - name: Upload APK to Artifacts
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: android-apk-debug
-          path: composeApp/build/outputs/apk/debug/*.apk
+          name: edziennik-debug-apk
+          path: composeApp/build/outputs/apk/debug/composeApp-debug.apk
           retention-days: 30
-
-      - name: Create Release
-        if: github.event_name == 'push'
-        uses: softprops/action-gh-release@v1
-        with:
-          files: composeApp/build/outputs/apk/debug/*.apk
-          tag_name: build-${{ github.run_number }}-${{ github.run_id }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
