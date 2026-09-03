@@ -21,25 +21,11 @@ object POWCaptchaResolver {
         for (ch in challenge) buf[len++] = ch.code.toByte()
 
         fun writeAsciiLong(value: Long, start: Int): Int {
-            var v = value
-            var pos = start
-
-            do {
-                val digit = (v % 10).toInt()
-                buf[pos++] = (digit + 48).toByte()
-                v /= 10
-            } while (v != 0L)
-
-            var i = start
-            var j = pos - 1
-            while (i < j) {
-                val tmp = buf[i]
-                buf[i] = buf[j]
-                buf[j] = tmp
-                i++; j--
+            val str = value.toString()
+            for (i in str.indices) {
+                buf[start + i] = str[i].code.toByte()
             }
-
-            return pos
+            return start + str.length
         }
 
         fun findNonce(baseLen: Int): Pair<Long, Int> {
