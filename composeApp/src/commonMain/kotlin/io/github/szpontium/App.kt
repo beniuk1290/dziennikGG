@@ -20,6 +20,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
@@ -31,6 +32,8 @@ import io.github.szpontium.session.SessionStorage
 import io.github.szpontium.theme.SzpontTheme
 import io.github.szpontium.ui.screen.DashboardScreen
 import io.github.szpontium.ui.screen.LoginScreen
+import io.github.szpontium.update.UpdateDialog
+import io.github.szpontium.update.UpdateManager
 import kotlinx.coroutines.launch
 import org.koin.compose.KoinApplication
 import org.koin.compose.koinInject
@@ -52,15 +55,22 @@ fun App() {
 private fun AppNavigation() {
     val session = koinInject<ApiSession>()
     val sessionStorage = koinInject<SessionStorage>()
+    val updateManager = koinInject<UpdateManager>()
     val scope = rememberCoroutineScope()
 
     var isLoading by remember { mutableStateOf(true) }
     var startRoute: Route by remember { mutableStateOf(Route.Login) }
+    val updateAvailable by updateManager.updateAvailable.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
         val restored = sessionStorage.restore(session)
         startRoute = if (restored) Route.Dashboard else Route.Login
         isLoading = false
+
+        // Sprawdź aktualizacje
+        scope.launch {
+            updateManager.checkForUpdates()
+        }
     }
 
     if (isLoading) {
@@ -71,6 +81,21 @@ private fun AppNavigation() {
     }
 
     val backStack = remember { mutableStateListOf<Route>(startRoute) }
+
+    // Pokaż dialog aktualizacji jeśli dostępna
+    if (updateAvailable != null) {
+        UpdateDialog(
+            updateInfo = updateAvailable!!,
+            onDismiss = {
+                updateManager.dismissUpdate()
+            },
+            onDownload = { updateInfo ->
+                scope.launch {
+                    // Tutaj będzie obsługa pobrania na Android
+                }
+            }
+        )
+    }
 
     NavDisplay(
         modifier = Modifier.fillMaxSize(),
