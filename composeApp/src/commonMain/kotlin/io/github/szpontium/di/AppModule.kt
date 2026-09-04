@@ -4,6 +4,7 @@ import io.github.szpontium.platform.createHttpClient
 import io.github.szpontium.session.ApiSession
 import io.github.szpontium.session.SessionStorage
 import io.github.szpontium.session.createSessionDataStore
+import io.github.szpontium.update.UpdateManager
 import io.github.szpontium.viewmodel.AnnouncementsViewModel
 import io.github.szpontium.viewmodel.DashboardViewModel
 import io.github.szpontium.viewmodel.ExamsViewModel
@@ -22,6 +23,7 @@ val appModule = module {
     single { createHttpClient() }
     single { createSessionDataStore() }
     single { SessionStorage(get(), get()) }
+    single { UpdateManager(get()) }
 
     viewModel { LoginViewModel(get(), get(), get()) }
     viewModel { DashboardViewModel(get()) }
