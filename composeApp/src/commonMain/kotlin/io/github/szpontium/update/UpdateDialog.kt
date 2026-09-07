@@ -108,7 +108,7 @@ fun UpdateDialog(
 
                 // Description
                 Text(
-                    text = "Dostępna jest nowa wersja aplikacji dziennik.GG. Zaktualizuj teraz, aby korzystać z najnowszych funkcji.",
+                    text = "Dostępna jest nowa wersja aplikacji dziennikGG. Zaktualizuj teraz, aby korzystać z najnowszych funkcji.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center

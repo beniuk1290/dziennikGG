@@ -1,4 +1,4 @@
-# Dzienniczek Szpontniczek
+# dziennikGG
 
 [![Skala szpontu](https://img.shields.io/badge/szpont_kwantowy-w_skali_szpontu-blue)](https://github.com/szponciciel04/DzienniczekSzpontniczek)
 [![Repo size](https://img.shields.io/github/repo-size/szponciciel04/DzienniczekSzpontniczek)](https://github.com/szponciciel04/DzienniczekSzpontniczek)

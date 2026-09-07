@@ -5,8 +5,8 @@
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDisplayName</key>
-	<string>Szpontniczek</string>
+	<string>dziennikGG</string>
 	<key>CFBundleName</key>
-	<string>Szpontniczek</string>
+	<string>dziennikGG</string>
 </dict>
 </plist>
