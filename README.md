@@ -22,7 +22,6 @@
 
 **dziennikGG** to open-source'owa aplikacja mobilna stworzona w **Kotlin Multiplatform** z **Compose Multiplatform**, umożliwiająca dostęp do polskiego e-dziennika szkolnego. Aplikacja wspiera jednocześnie systemy **VULCAN Hebe**, **eduVULCAN (Prometheus)** oraz **Librus Synergia** — bez konieczności korzystania z oficjalnych, często ograniczonych aplikacji.
 
-Projekt został w całości opracowany przy wsparciu AI (Claude Sonnet 4.6).
 
 ---
 
@@ -194,7 +193,6 @@ Projekt jest objęty licencją MIT — zobacz [LICENSE](LICENSE) aby uzyskać wi
 
 ## 🙏 Podziękowania
 
-- **Claude Sonnet 4.6** — za pomoc w tworzeniu tego projektu
 - **Szkolny.eu** — za użycie kodu do obsługi dziennika Librus
 - **VULCAN** — za udostępnienie API Hebe
 
