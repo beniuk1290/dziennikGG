@@ -51,9 +51,21 @@ jobs:
             archive \
             CODE_SIGNING_ALLOWED=NO
 
+      - name: Export IPA
+        run: |
+          cd iosApp
+          xcodebuild -exportArchive \
+            -archivePath iosApp.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath iosApp-export \
+            CODE_SIGNING_ALLOWED=NO || echo "Export without signing failed, uploading archive instead"
+
       - name: Upload iOS artifact
         uses: actions/upload-artifact@v4
         with:
           name: dziennikGG-ios
-          path: iosApp/iosApp.xcarchive
+          path: |
+            iosApp/iosApp-export/iosApp.ipa
+            iosApp/iosApp.xcarchive
           retention-days: 1
+          if-no-files-found: warn
