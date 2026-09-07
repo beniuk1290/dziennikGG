@@ -1,10 +1,15 @@
-name: Build APK and IPA
+name: Build and Release
 
 on:
   push:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v0.1.2)'
+        required: true
+        default: 'v0.1.2'
 
 jobs:
   build-android:
@@ -19,43 +24,21 @@ jobs:
           distribution: 'temurin'
           cache: 'gradle'
 
-      - name: Build APK
-        run: ./gradlew :composeApp:assembleRelease
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
-      - name: Sign APK
-        uses: r0adkll/sign-android-release@v1
-        id: sign_apk
+      - name: Build Debug APK
+        run: ./gradlew :composeApp:assembleDebug
+
+      - name: Create Release and Upload APK
+        uses: softprops/action-gh-release@v2
         with:
-          releaseDirectory: composeApp/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-
-      - name: Upload APK to Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ${{ steps.sign_apk.outputs.signedReleaseFile }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  build-ios:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Xcode
-        run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-
-      - name: Build IPA
-        run: |
-          cd iosApp
-          xcodebuild -scheme iosApp -configuration Release -archivePath iosApp.xcarchive archive
-          xcodebuild -exportArchive -archivePath iosApp.xcarchive -exportOptionsPlist exportOptions.plist -exportPath iosApp-export
-
-      - name: Upload IPA to Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: iosApp-export/iosApp.ipa
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
+          name: "Release ${{ github.event.inputs.tag || github.ref_name }}"
+          body: |
+            ## dziennikGG - Nowa wersja
+            Pobierz APK i zainstaluj na urządzeniu Android.
+          files: composeApp/build/outputs/apk/debug/composeApp-debug.apk
+          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
