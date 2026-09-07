@@ -202,6 +202,5 @@ Projekt jest objęty licencją MIT — zobacz [LICENSE](LICENSE) aby uzyskać wi
 
 **⭐ Jeśli podoba Ci się projekt, daj gwiazdkę na GitHubie! ⭐**
 
-Made with ❤️ for Polish students
 
 </div>
