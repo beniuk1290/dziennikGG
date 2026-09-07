@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		08B3AB084419AC02C6388CA8 /* Szpontium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Szpontium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08B3AB084419AC02C6388CA8 /* dziennikGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dziennikGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -59,7 +59,7 @@
 		82DB21B91B2785C4197523FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08B3AB084419AC02C6388CA8 /* Szpontium.app */,
+				08B3AB084419AC02C6388CA8 /* dziennikGG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			packageProductDependencies = (
 			);
 			productName = iosApp;
-			productReference = 08B3AB084419AC02C6388CA8 /* Szpontium.app */;
+			productReference = 08B3AB084419AC02C6388CA8 /* dziennikGG.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

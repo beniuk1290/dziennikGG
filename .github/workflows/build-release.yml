@@ -55,7 +55,7 @@ jobs:
         run: |
           cd iosApp
           mkdir -p Payload
-          cp -r iosApp.xcarchive/Products/Applications/Szpontium.app Payload/
+          cp -r iosApp.xcarchive/Products/Applications/dziennikGG.app Payload/
           zip -r iosApp-export/dziennikGG.ipa Payload
           rm -rf Payload
 

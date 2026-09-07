@@ -72,7 +72,7 @@ fun LoginScreen(
         ) {
             Spacer(Modifier.height(48.dp))
             Text(
-                text = "Szpontium",
+                text = "dziennikGG",
                 style = MaterialTheme.typography.headlineLarge
             )
             Text(

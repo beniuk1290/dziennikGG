@@ -75,7 +75,7 @@ class PrometheusMessagesApi(
         if (currentCookies == null) {
             if (login != null && password != null) {
                 val helper = PrometheusLoginHelper()
-                val result = helper.login(login, password, "Szpontium")
+                val result = helper.login(login, password, "dziennikGG")
                 currentCookies = result.cookies
             } else {
                 throw IllegalStateException("Brak ciasteczek i brak danych logowania")
