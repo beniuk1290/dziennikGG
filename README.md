@@ -26,14 +26,6 @@ Projekt został w całości opracowany przy wsparciu AI (Claude Sonnet 4.6).
 
 ---
 
-## 📱 Zdjęcia aplikacji
-
-<p align="center">
-  <img src="./artwork/szpont-detected.jpg" alt="dziennikGG - ekran główny" width="300">
-</p>
-
----
-
 ## ✨ Funkcje
 
 ### 📊 Panel główny
