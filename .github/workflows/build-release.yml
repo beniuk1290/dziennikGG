@@ -51,21 +51,18 @@ jobs:
             archive \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Export IPA
+      - name: Create IPA from Archive
         run: |
           cd iosApp
-          xcodebuild -exportArchive \
-            -archivePath iosApp.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath iosApp-export \
-            CODE_SIGNING_ALLOWED=NO || echo "Export without signing failed, uploading archive instead"
+          mkdir -p Payload
+          cp -r iosApp.xcarchive/Products/Applications/Szpontium.app Payload/
+          zip -r iosApp-export/dziennikGG.ipa Payload
+          rm -rf Payload
 
       - name: Upload iOS artifact
         uses: actions/upload-artifact@v4
         with:
           name: dziennikGG-ios
-          path: |
-            iosApp/iosApp-export/iosApp.ipa
-            iosApp/iosApp.xcarchive
+          path: iosApp/iosApp-export/dziennikGG.ipa
           retention-days: 1
           if-no-files-found: warn
