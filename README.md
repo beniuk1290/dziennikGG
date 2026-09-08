@@ -20,7 +20,7 @@
 
 ## 🔍 O projekcie
 
-**dziennikGG** to open-source'owa aplikacja mobilna stworzona w **Kotlin Multiplatform** z **Compose Multiplatform**, umożliwiająca dostęp do polskiego e-dziennika szkolnego. Aplikacja wspiera jednocześnie systemy **VULCAN Hebe**, **eduVULCAN (Prometheus)** oraz **Librus Synergia** — bez konieczności korzystania z oficjalnych, często ograniczonych aplikacji.
+**dziennikGG** to open-source'owa aplikacja mobilna stworzona w **Kotlin Multiplatform** z **Compose Multiplatform**, umożliwiająca dostęp do polskiego e-dziennika szkolnego. Aplikacja wspiera jednocześnie systemy **VULCAN Hebe**, **eduVULCAN (Prometheus)** oraz **Librus Synergia** — bez konieczności korzystania z oficjalnych, ograniczonych aplikacji.
 
 
 ---
@@ -112,9 +112,7 @@ UI (Compose) ← StateFlow ← ViewModel ← ApiSession ← SzpontApi (Hebe/Libr
 3. Zainstaluj na urządzeniu (włącz instalację z nieznanych źródeł)
 
 ### iOS
-1. Otwórz projekt w Xcode
-2. Podłącz urządzenie lub uruchom symulator
-3. Build & Run
+Już wkrótce...
 
 ### Kompilacja ze źródeł
 ```bash
@@ -129,8 +127,8 @@ cd edziennik
 
 | System | Logowanie | Status |
 |---|---|---|
-| **VULCAN Hebe** | Token + PIN + symbol szkoły | ✅ Pełna obsługa |
-| **eduVULCAN (Prometheus)** | Email + hasło | ✅ Pełna obsługa |
+| **VULCAN stara wersja** | Token + PIN + symbol szkoły | ✅ Pełna obsługa |
+| **eduVULCAN (Prometheus) nowe logowanie** | Email + hasło | ✅ Pełna obsługa |
 | **Librus Synergia** | Email + hasło | ✅ Podstawowa obsługa |
 
 ---
@@ -182,6 +180,8 @@ Znalazłeś błąd? Otwórz [issue](https://github.com/beniuk1290/edziennik/issu
 - Oczekiwanego zachowania
 - Faktycznego zachowania
 - Wersji aplikacji i systemu
+*(jeszcze nie zrobiłem)*
+
 
 ---
 
@@ -194,13 +194,12 @@ Projekt jest objęty licencją MIT — zobacz [LICENSE](LICENSE) aby uzyskać wi
 ## 🙏 Podziękowania
 
 - **Szkolny.eu** — za użycie kodu do obsługi dziennika Librus
-- **VULCAN** — za udostępnienie API Hebe
 
 ---
 
 <div align="center">
 
-**⭐ Jeśli podoba Ci się projekt, daj gwiazdkę na GitHubie! ⭐**
+** Jeśli podoba Ci się projekt, daj gwiazdkę na GitHubie! **
 
 
 </div>
