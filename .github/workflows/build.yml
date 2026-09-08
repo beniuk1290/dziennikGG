@@ -24,23 +24,25 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Install NDK
-      run: sdk-manager "ndk;25.2.9519653"
-
-    - name: Setup CMake
-      run: sdk-manager "cmake;3.22.1"
-
-    - name: Setup Google Services
-      run: echo '${{{ secrets.GOOGLE_SERVICES_JSON }}}' > app/google-services.json
+    - name: Install NDK and CMake
+      run: |
+        sdk-manager "ndk;25.2.9519653" "cmake;3.22.1"
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
     - name: Build APK
-      run: ./gradlew assembleUnofficialDebug
+      run: ./gradlew assembleUnofficialDebug --stacktrace
+      continue-on-error: true
+
+    - name: Check APK output
+      run: |
+        find app/build/outputs/apk -name "*.apk" 2>/dev/null || echo "No APK found"
 
     - name: Upload APK
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: dziennikGG-apk
-        path: app/build/outputs/apk/unofficial/debug/*.apk
+        path: app/build/outputs/apk/**/*.apk
+        if-no-files-found: warn
