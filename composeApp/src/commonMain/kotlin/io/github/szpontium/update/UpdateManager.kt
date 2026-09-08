@@ -35,7 +35,7 @@ class UpdateManager(private val httpClient: HttpClient) {
     
     // Wersja aplikacji (musi być taka sama jak w build.gradle.kts)
     companion object {
-        const val CURRENT_VERSION = "0.2.0-beta"
+        const val CURRENT_VERSION = "0.67.0"
         const val GITHUB_REPO = "beniuk1290/dziennikGG"
         const val GITHUB_API_URL = "https://api.github.com/repos/$GITHUB_REPO/releases/latest"
     }

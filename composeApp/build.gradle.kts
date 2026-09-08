@@ -92,8 +92,8 @@ android {
         applicationId = "io.github.szpontium"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 3
-        versionName = "0.2.0-beta"
+        versionCode = 67
+        versionName = "0.67.0-easteregg"
     }
     packaging {
         resources {
@@ -117,3 +117,42 @@ dependencies {
     debugImplementation(libs.compose.uiTooling)
 }
 
+
+abstract class GenerateCAsTask : DefaultTask() {
+
+    @get:Input
+    abstract val certs: MapProperty<String, String>
+
+    @get:OutputDirectory
+    abstract val outputDir: DirectoryProperty
+
+    @TaskAction
+    fun run() {
+        val dir = outputDir.get().asFile
+        dir.mkdirs()
+
+        certs.get().forEach { (name, url) ->
+            val outFile = File(dir, "$name.crt")
+            URI(url).toURL().openStream().use { input ->
+                outFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            }
+        }
+    }
+}
+
+val generateCAs by tasks.registering(GenerateCAsTask::class) {
+
+    certs.set(
+        mapOf(
+            "certum_trusted_root_ca" to "https://www.files.certum.eu/documents/klucze_ca/Certum_Trusted_Root_CA.crt"
+        )
+    )
+
+    outputDir.set(layout.buildDirectory.dir("generated/res/certs/raw"))
+}
+
+tasks.preBuild {
+    dependsOn(generateCAs)
+}
