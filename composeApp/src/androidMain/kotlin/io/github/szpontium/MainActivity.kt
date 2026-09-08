@@ -8,7 +8,7 @@ import io.github.szpontium.session.initAndroidDataStoreContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+        try { enableEdgeToEdge() } catch (_: Exception) {}
         super.onCreate(savedInstanceState)
         initAndroidDataStoreContext(this)
         setContent {
