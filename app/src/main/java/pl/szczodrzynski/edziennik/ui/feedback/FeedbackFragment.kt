@@ -246,6 +246,6 @@ class FeedbackFragment : BaseFragment<FragmentFeedbackBinding, AppCompatActivity
     }
 
     private fun openFaq() {
-        openUrl(activity, "http://szkolny.eu/pomoc/")
+        openUrl(activity, "https://github.com/beniuk1290/dziennikGG")
     }
 }

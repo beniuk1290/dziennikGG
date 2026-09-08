@@ -343,6 +343,26 @@ object LoginInfo {
                     ),
                 ),
             ),
+            Register(
+                loginType = LoginType.EDUDZIENNIK,
+                registerName = R.string.login_type_eduvulcan,
+                registerLogo = R.drawable.login_logo_vulcan,
+                loginModes = listOf(
+                    Mode(
+                        loginMode = LoginMode.EDUVULCAN_API,
+                        name = R.string.login_mode_eduvulcan_api,
+                        icon = R.drawable.login_mode_vulcan_hebe,
+                        hintText = R.string.login_mode_eduvulcan_api_hint,
+                        guideText = R.string.login_mode_eduvulcan_api_guide,
+                        isRecommended = true,
+                        credentials = listOf(
+                            getEmailCredential("email"),
+                            getPasswordCredential("password")
+                        ),
+                        errorCodes = mapOf()
+                    )
+                )
+            ),
         )
     }
 

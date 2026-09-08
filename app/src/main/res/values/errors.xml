@@ -230,13 +230,13 @@
     <string name="error_5003_reason">Brak dostępu do API</string>
     <string name="error_5004_reason">Brak uprawnień do zasobu API</string>
     <string name="error_5005_reason">Nie znaleziono zasobu API</string>
-    <string name="error_5006_reason">Błąd serwera API Szkolny.eu</string>
+    <string name="error_5006_reason">Błąd serwera API dziennikGG</string>
     <string name="error_5007_reason">ERROR_API_PHP_E_ERROR</string>
     <string name="error_5008_reason">ERROR_API_PHP_E_WARNING</string>
     <string name="error_5009_reason">ERROR_API_PHP_E_PARSE</string>
     <string name="error_5010_reason">ERROR_API_PHP_E_NOTICE</string>
     <string name="error_5011_reason">ERROR_API_PHP_E_OTHER</string>
-    <string name="error_5012_reason">API Szkolny.eu: przerwa techniczna</string>
+    <string name="error_5012_reason">API dziennikGG: przerwa techniczna</string>
     <string name="error_5013_reason">API: brakujący argument</string>
     <string name="error_5014_reason">API: brak przesłanej zawartości</string>
     <string name="error_5015_reason">ERROR_API_INVALID_ACTION</string>
@@ -354,7 +354,7 @@
     <string name="error_364_reason">VULCAN®: błąd serwera. Dziennik może być przeciążony.</string>
     <string name="error_365_reason">VULCAN®: nie znaleziono bytu</string>
     <string name="error_366_reason">Błąd wysyłania wiadomości - brak informacji o nadawcy.</string>
-    <string name="error_390_reason">W związku z wygaszeniem aplikacji Dzienniczek+ przez firmę Vulcan, należy zalogować się ponownie.\n\nAby móc dalej korzystać z aplikacji Szkolny.eu, otwórz Ustawienia i wybierz opcję Dodaj nowego ucznia.\nNastępnie zaloguj się do dziennika Vulcan zgodnie z instrukcją.\n\nPrzepraszamy za niedogodności.</string>
+    <string name="error_390_reason">W związku z wygaszeniem aplikacji Dzienniczek+ przez firmę Vulcan, należy zalogować się ponownie.\n\nAby móc dalej korzystać z aplikacji dziennikGG, otwórz Ustawienia i wybierz opcję Dodaj nowego ucznia.\nNastępnie zaloguj się do dziennika Vulcan zgodnie z instrukcją.\n\nPrzepraszamy za niedogodności.</string>
 
     <string name="error_601_reason">Nieprawidłowy token</string>
     <string name="error_602_reason">Przekroczono maksymalną liczbę urządzeń (5)</string>

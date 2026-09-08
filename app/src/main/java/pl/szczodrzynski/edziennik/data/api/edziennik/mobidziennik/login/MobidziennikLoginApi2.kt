@@ -32,7 +32,7 @@ class MobidziennikLoginApi2(val data: DataMobidziennik, val onSuccess: () -> Uni
                 "uuid" to app.deviceId,
                 "cordova" to "7.1.2",
                 "model" to "${Build.MANUFACTURER} ${Build.MODEL}",
-                "manufacturer" to "Aplikacja Szkolny.eu",
+                "manufacturer" to "Aplikacja dziennikGG",
                 "isVirtual" to false,
                 "serial" to try { System.getProperty("ro.serialno") ?: System.getProperty("ro.boot.serialno") } catch (_: Exception) { Build.UNKNOWN },
                 "appVersion" to "10.6, 2020.01.09-12.15.53",

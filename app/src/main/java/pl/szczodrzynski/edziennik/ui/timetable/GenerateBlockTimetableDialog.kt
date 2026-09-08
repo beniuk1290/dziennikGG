@@ -326,7 +326,7 @@ class GenerateBlockTimetableDialog(
             }
 
             val footerTextPaintCenter = ((textPaint.descent() + textPaint.ascent()) / 2).roundToInt()
-            canvas.drawText("Wygenerowano w aplikacji Szkolny.eu", imageWidth - 10f, imageHeight - footerTextPaintCenter - 10f, textPaint)
+            canvas.drawText("Wygenerowano w aplikacji dziennikGG", imageWidth - 10f, imageHeight - footerTextPaintCenter - 10f, textPaint)
 
             textPaint.apply {
                 setARGB(255, 127, 127, 127)
@@ -371,9 +371,9 @@ class GenerateBlockTimetableDialog(
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 values.put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
-                values.put(MediaStore.MediaColumns.RELATIVE_PATH, File(Environment.DIRECTORY_PICTURES, "Szkolny.eu").path)
+                values.put(MediaStore.MediaColumns.RELATIVE_PATH, File(Environment.DIRECTORY_PICTURES, "dziennikGG").path)
             } else {
-                val picturesDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Szkolny.eu")
+                val picturesDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "dziennikGG")
                 picturesDirectory.mkdirs()
                 values.put(MediaStore.MediaColumns.DATA, File(picturesDirectory, filename).path)
             }

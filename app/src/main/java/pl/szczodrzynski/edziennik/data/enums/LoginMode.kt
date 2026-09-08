@@ -18,4 +18,5 @@ enum class LoginMode(
     PODLASIE_API(LoginType.PODLASIE, id = 600),
     USOS_OAUTH(LoginType.USOS, id = 700),
     DEMO(LoginType.DEMO, id = 800),
+    EDUVULCAN_API(LoginType.EDUDZIENNIK, id = 500),
 }

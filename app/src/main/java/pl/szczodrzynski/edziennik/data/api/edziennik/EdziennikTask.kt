@@ -10,6 +10,7 @@ import pl.szczodrzynski.edziennik.App
 import pl.szczodrzynski.edziennik.R
 import pl.szczodrzynski.edziennik.data.api.ERROR_PROFILE_ARCHIVED
 import pl.szczodrzynski.edziennik.data.api.edziennik.demo.Demo
+import pl.szczodrzynski.edziennik.data.api.edziennik.eduvulcan.EduVulcan
 import pl.szczodrzynski.edziennik.data.api.edziennik.librus.Librus
 import pl.szczodrzynski.edziennik.data.api.edziennik.mobidziennik.Mobidziennik
 import pl.szczodrzynski.edziennik.data.api.edziennik.podlasie.Podlasie
@@ -127,6 +128,7 @@ open class EdziennikTask(override val profileId: Int, val request: Any) : IApiTa
             LoginType.TEMPLATE -> Template(app, profile, loginStore, taskCallback)
             LoginType.USOS -> Usos(app, profile, loginStore, taskCallback)
             LoginType.DEMO -> Demo(app, profile, loginStore, taskCallback)
+            LoginType.EDUDZIENNIK -> EduVulcan(app, profile, loginStore, taskCallback)
             else -> null
         }
         if (edziennikInterface == null) {

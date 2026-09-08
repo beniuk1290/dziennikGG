@@ -192,7 +192,7 @@ class App : MultiDexApplication(), Configuration.Provider, CoroutineScope {
 
         // initialize Timber to enable basic logging
         Timber.plant(loggingManager.logcatTree)
-        Timber.i("Initializing Szkolny.eu app v${BuildConfig.VERSION_NAME}")
+        Timber.i("Initializing dziennikGG app v${BuildConfig.VERSION_NAME}")
         // initialize core objects
         AppData.read(this)
         App.db = AppDb(this)
@@ -201,7 +201,7 @@ class App : MultiDexApplication(), Configuration.Provider, CoroutineScope {
         App.config.migrate()
         // add database logging to Timber
         Timber.plant(loggingManager.databaseTree)
-        Timber.i("Initialized Szkolny.eu app v${BuildConfig.VERSION_NAME}")
+        Timber.i("Initialized dziennikGG app v${BuildConfig.VERSION_NAME}")
 
         devMode = config.devMode ?: BuildConfig.DEBUG
         if (config.devModePassword != null)

@@ -160,7 +160,7 @@ class MessagesComposeFragment : BaseFragment<MessagesComposeFragmentBinding, Mai
             LoginType.LIBRUS -> 150
             LoginType.VULCAN -> 200
             LoginType.IDZIENNIK -> 180
-            LoginType.EDUDZIENNIK -> 0
+            LoginType.EDUDZIENNIK -> 200
             else -> -1
         }
         b.textLayout.counterMaxLength = when (app.profile.loginStoreType) {
@@ -168,7 +168,7 @@ class MessagesComposeFragment : BaseFragment<MessagesComposeFragmentBinding, Mai
             LoginType.LIBRUS -> 20000
             LoginType.VULCAN -> -1
             LoginType.IDZIENNIK -> 1983
-            LoginType.EDUDZIENNIK -> 0
+            LoginType.EDUDZIENNIK -> -1
             else -> -1
         }
 

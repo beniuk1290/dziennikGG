@@ -83,4 +83,8 @@ enum class LoginMethod(
         id = 21200,
         requiredLoginMethod = { _, _ -> TEMPLATE_WEB },
     ),
+    EDUVULCAN_HEBE(
+        loginType = LoginType.EDUDZIENNIK,
+        id = 5600,
+    ),
 }

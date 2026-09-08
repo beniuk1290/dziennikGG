@@ -182,7 +182,7 @@ class BuildManager(val app: App) : CoroutineScope {
             positive(R.string.ok, null)
             neutral(R.string.build_dialog_open_repo) {
                 val url = if (gitRemote == null)
-                    "https://szkolny.eu/github/android"
+                    "https://github.com/beniuk1290/dziennikGG"
                 else
                     "https://github.com/$gitRemote/tree/$gitHash"
                 Utils.openUrl(activity, url)

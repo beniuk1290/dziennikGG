@@ -1,2 +1,2 @@
-rootProject.name='Szkolny.eu'
+rootProject.name='dziennikGG'
 include ':app', ':navlib', ':navlib-font'

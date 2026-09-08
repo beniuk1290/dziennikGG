@@ -134,7 +134,7 @@ class SettingsAboutCard(util: SettingsUtil) : SettingsCard(util), CoroutineScope
             text = R.string.settings_about_privacy_policy_text,
             icon = CommunityMaterial.Icon3.cmd_shield_outline
         ) {
-            Utils.openUrl(activity, "https://szkolny.eu/privacy-policy")
+            Utils.openUrl(activity, "https://github.com/beniuk1290/dziennikGG")
         },
 
         util.createActionItem(
@@ -142,7 +142,7 @@ class SettingsAboutCard(util: SettingsUtil) : SettingsCard(util), CoroutineScope
             subText = R.string.settings_about_discord_subtext,
             icon = SzkolnyFont.Icon.szf_discord_outline
         ) {
-            Utils.openUrl(activity, "https://szkolny.eu/discord")
+            Utils.openUrl(activity, "https://github.com/beniuk1290/dziennikGG")
         },
 
         util.createActionItem(
@@ -150,7 +150,7 @@ class SettingsAboutCard(util: SettingsUtil) : SettingsCard(util), CoroutineScope
             subText = R.string.settings_about_github_subtext,
             icon = SzkolnyFont.Icon.szf_github_face
         ) {
-            Utils.openUrl(activity, "https://szkolny.eu/github/android")
+            Utils.openUrl(activity, "https://github.com/beniuk1290/dziennikGG")
         },
 
         util.createMoreItem(card, items = listOfNotNull(
@@ -159,7 +159,7 @@ class SettingsAboutCard(util: SettingsUtil) : SettingsCard(util), CoroutineScope
                 subText = R.string.settings_about_homepage_subtext,
                 icon = CommunityMaterial.Icon.cmd_earth
             ) {
-                Utils.openUrl(activity, "https://szkolny.eu/")
+                Utils.openUrl(activity, "https://github.com/beniuk1290/dziennikGG")
             },
 
             util.createActionItem(

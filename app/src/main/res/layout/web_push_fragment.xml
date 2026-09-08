@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1. Na komputerze otwórz stronę http://szkolny.eu/wp\n2. Zezwól stronie na wyświetlanie powiadomień dot. danych z dziennika.\n3. Kliknij przycisk &quot;Skanuj&quot; poniżej lub przepisz token ze strony." />
+            android:text="1. Na komputerze otwórz stronę http://github.com/beniuk1290/dziennikGG\n2. Zezwól stronie na wyświetlanie powiadomień dot. danych z dziennika.\n3. Kliknij przycisk &quot;Skanuj&quot; poniżej lub przepisz token ze strony." />
 
         <TextView
             android:layout_width="wrap_content"
